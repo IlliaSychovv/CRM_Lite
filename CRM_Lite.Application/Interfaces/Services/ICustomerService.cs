@@ -2,7 +2,7 @@ using CRM_Lite.Application.DTO;
 using CRM_Lite.Application.DTO.Customer;
 using CRM_Lite.Application.DTO.Pagination;
 
-namespace CRM_Lite.Application.Intarfaces;
+namespace CRM_Lite.Application.Interfaces.Services;
 
 public interface ICustomerService
 {

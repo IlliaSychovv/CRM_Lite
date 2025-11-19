@@ -1,6 +1,6 @@
 using CRM_Lite.Application.DTO;
 using CRM_Lite.Application.DTO.Pagination;
-using CRM_Lite.Application.Intarfaces;
+using CRM_Lite.Application.Interfaces.Repositories;
 using CRM_Lite.Domain.Entity;
 using CRM_Lite.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -40,16 +40,18 @@ public class CustomerRepository : ICustomerRepository
 
     public async Task<PagedResult<BuyerDto>> GetLastBuyersAsync(int days, int pageNumber, int pageSize)
     {
-        var query = _dbContext.Purchases
+        var cutoffDate = DateTime.UtcNow.AddDays(-days);
+
+        var filteredQuery = _dbContext.Purchases
             .AsNoTracking()
+            .Where(x => x.PurchaseDate >= cutoffDate)
             .AsQueryable();
-        
-        var count = await query
+
+        var count = await filteredQuery
             .GroupBy(x => new { x.CustomerId, x.Customer.FullName })
             .CountAsync();
 
-        var items = await query
-            .Where(x => x.PurchaseDate >= DateTime.UtcNow.AddDays(-days))
+        var items = await filteredQuery
             .GroupBy(x => new { x.CustomerId, x.Customer.FullName })
             .Select(b => new BuyerDto
             {

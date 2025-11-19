@@ -1,4 +1,6 @@
 using CRM_Lite.Application.DTO;
+using CRM_Lite.Application.DTO.Product;
+using CRM_Lite.Application.Interfaces.Services;
 using CRM_Lite.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 

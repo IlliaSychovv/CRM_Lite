@@ -1,4 +1,4 @@
-using CRM_Lite.Application.Intarfaces;
+using CRM_Lite.Application.Interfaces.Repositories;
 using CRM_Lite.Domain.Entity;
 using CRM_Lite.Infrastructure.Data;
 

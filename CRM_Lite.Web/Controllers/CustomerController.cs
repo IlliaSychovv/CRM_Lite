@@ -1,5 +1,5 @@
 using CRM_Lite.Application.DTO.Customer;
-using CRM_Lite.Application.Intarfaces;
+using CRM_Lite.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRM_Lite.Controllers;
@@ -24,7 +24,7 @@ public class CustomerController : ControllerBase
         return Ok(customers);
     }
 
-    [HttpGet("nigga")]
+    [HttpGet("last-buyers")]
     public async Task<IActionResult> GetLastBuyers([FromQuery] int days,
         [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {

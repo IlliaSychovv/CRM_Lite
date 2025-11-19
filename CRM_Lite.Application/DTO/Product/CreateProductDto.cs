@@ -1,6 +1,6 @@
 using CRM_Lite.Domain.Entity;
 
-namespace CRM_Lite.Application.DTO;
+namespace CRM_Lite.Application.DTO.Product;
 
 public record CreateProductDto
 {

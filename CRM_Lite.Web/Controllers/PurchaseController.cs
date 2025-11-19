@@ -1,5 +1,6 @@
 using CRM_Lite.Application.DTO;
-using CRM_Lite.Application.Intarfaces;
+using CRM_Lite.Application.DTO.Purchase;
+using CRM_Lite.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRM_Lite.Controllers;

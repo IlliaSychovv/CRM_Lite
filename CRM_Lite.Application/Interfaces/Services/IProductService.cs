@@ -1,6 +1,6 @@
-using CRM_Lite.Application.DTO;
+using CRM_Lite.Application.DTO.Product;
 
-namespace CRM_Lite.Application.Services;
+namespace CRM_Lite.Application.Interfaces.Services;
 
 public interface IProductService
 {
