@@ -5,7 +5,7 @@ CRM Lite follows a layered clean architecture:
 - `CRM_Lite.Application` holds DTOs, service/repository interfaces, FluentValidation rules, and Mapster-powered services orchestrating business logic.
 - `CRM_Lite.Infrastructure` wires Entity Framework Core (PostgreSQL) with `AppDbContext`, repositories, and migrations.
 - `CRM_Lite.Web` exposes REST endpoints via controllers, registers the DI graph, FluentValidation auto-validation, Swagger, and a global exception handler.
-- Test projects (`CRM_Lite.UnitTest`, `CRM_Lite.UnitTests`) cover service logic with xUnit/Moq and include an NUnit scaffold.
+- Test projects (`CRM_Lite.UnitTest`) cover service logic with xUnit/Moq and include an xUnit scaffold.
 
 ## Main Technologies and Tools
 
